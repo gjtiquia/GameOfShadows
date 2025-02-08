@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
 
+// from https://github.com/Matthew-J-Spencer/Ultimate-2D-Controller
+// TODO : use his primitive animator too, apparently handles sprite flips too
+
 namespace TarodevController
 {
     /// <summary>
