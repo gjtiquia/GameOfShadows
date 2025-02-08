@@ -208,7 +208,6 @@ GameObject:
   - component: {fileID: 271324882}
   - component: {fileID: 271324884}
   - component: {fileID: 271324883}
-  - component: {fileID: 271324885}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -310,20 +309,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.54, y: 5.21}
   m_Direction: 0
---- !u!114 &271324885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271324880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c911d13cf578084a9e9f6b9897f2bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToFlip: {fileID: 506129341}
-  playerController: {fileID: 271324883}
 --- !u!1 &329716673
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 506129342}
   - component: {fileID: 506129343}
+  - component: {fileID: 506129344}
   m_Layer: 0
   m_Name: Display
   m_TagString: Untagged
@@ -457,6 +443,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &506129344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506129341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4b8f888b102fc4e83c1396941d255e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _groundedKey: Grounded
+  _idleSpeedKey: IdleSpeed
+  _jumpKey: Jump
+  _anim: {fileID: 506129343}
+  _displayParent: {fileID: 506129341}
+  _jumpParticles: {fileID: 0}
+  _launchParticles: {fileID: 0}
+  _moveParticles: {fileID: 0}
+  _landParticles: {fileID: 0}
+  _footsteps: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
