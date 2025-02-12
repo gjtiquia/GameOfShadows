@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 namespace GJ.UnityToolbox
 {
@@ -177,16 +178,12 @@ namespace GJ.UnityToolbox
         /// </summary>
         public void ReturnDeferred(GameObject instance, float delay, Action callback)
         {
-            Debug.LogError("ObjectCache.ReturnDeferred: Not implemented! Install DOTween and uncomment the code to use");
-
-            /*
             Sequence deferSequence = DOTween.Sequence();
             deferSequence
                 .AppendInterval(delay)
                 .AppendCallback(() => Return(instance));
 
-            if (callback != null) deferSequence.AppendCallback(() => callback()); 
-            */
+            if (callback != null) deferSequence.AppendCallback(() => callback());
         }
 
         public void Prepare(UnityEngine.Component component, int desiredCount)
