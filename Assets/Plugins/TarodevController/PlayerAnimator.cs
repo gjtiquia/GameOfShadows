@@ -1,3 +1,4 @@
+using GJ.UnityToolbox;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -23,6 +24,10 @@ namespace TarodevController
         [SerializeField] private ParticleSystem _launchParticles;
         [SerializeField] private ParticleSystem _moveParticles;
         [SerializeField] private ParticleSystem _landParticles;
+
+        [Header("Jump FX")]
+        [SerializeField] private GameObject _jumpFXPrefab;
+        [SerializeField] private float _jumpFXDuration = 0.5f; // TODO
 
         [Header("Audio Clips")]
         [SerializeField] private AudioClip[] _footsteps;
@@ -102,6 +107,11 @@ namespace TarodevController
 
                 if (_launchParticles != null)
                     _launchParticles.Play();
+
+                // Spawn jump FX
+                GameObject jumpFX = ObjectPool.Instance.Get(_jumpFXPrefab);
+                jumpFX.transform.position = transform.position;
+                ObjectPool.Instance.ReturnDeferred(jumpFX, _jumpFXDuration);
             }
         }
 
