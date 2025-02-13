@@ -67,11 +67,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.22, y: 0.14}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -317,14 +317,22 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Re organized Game of shadows sprites _0005_0: 7058425414966241661
+      Re organized Game of shadows sprites _0005_1: 7521083042559304822
+      Re organized Game of shadows sprites _0005_2: 5234188376144083322
+      Re organized Game of shadows sprites _0005_3: 869415405651201668
+      Re organized Game of shadows sprites _0005_4: 2906084691846947836
+      Re organized Game of shadows sprites _0005_5: 1125591495974088871
+      Re organized Game of shadows sprites _0005_6: -6603819576805252539
+      Re organized Game of shadows sprites _0005_7: -2491237599566047695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

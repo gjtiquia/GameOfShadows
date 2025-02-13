@@ -9,13 +9,17 @@ public class PlayerDisplay : MonoBehaviour, IPlayerComponent
     [Header("References")]
     [SerializeField] private PlayerInput _input;
     [SerializeField] private PlayerMovement _movement;
+    [SerializeField] private PlayerAttack _attack;
     [SerializeField] private Animator _animator;
     [SerializeField] private GameObject _displayParent;
 
     // PRIVATE MEMBERS
+    private bool _grounded;
     private int _groundedHash;
     private int _jumpHash;
-    private bool _grounded;
+    private int _punchHash;
+    private int _speedRunHash;
+    private int _swordSlashHash;
 
     // MonoBehaviour INTERFACE
     private void OnValidate()
@@ -25,24 +29,36 @@ public class PlayerDisplay : MonoBehaviour, IPlayerComponent
         CommonUtilities.AssertIsNotNull(this, _movement);
         CommonUtilities.AssertIsNotNull(this, _animator);
         CommonUtilities.AssertIsNotNull(this, _displayParent);
+        CommonUtilities.AssertIsNotNull(this, _attack);
     }
 
     private void Awake()
     {
         _groundedHash = Animator.StringToHash(_settings.GroundedKey);
         _jumpHash = Animator.StringToHash(_settings.JumpKey);
+        _punchHash = Animator.StringToHash(_settings.PunchKey);
+        _speedRunHash = Animator.StringToHash(_settings.SpeedRunKey);
+        _swordSlashHash = Animator.StringToHash(_settings.SwordSlashKey);
     }
 
     private void OnEnable()
     {
         _movement.Jumped += OnJumped;
         _movement.GroundedChanged += OnGroundedChanged;
+
+        _attack.OnPunch += OnPunch;
+        _attack.OnSpeedRun += OnSpeedRun;
+        _attack.OnSwordSlash += OnSwordSlash;
     }
 
     private void OnDisable()
     {
         _movement.Jumped -= OnJumped;
         _movement.GroundedChanged -= OnGroundedChanged;
+
+        _attack.OnPunch -= OnPunch;
+        _attack.OnSpeedRun -= OnSpeedRun;
+        _attack.OnSwordSlash -= OnSwordSlash;
     }
 
     // IPlayerComponent INTERFACE
@@ -81,6 +97,24 @@ public class PlayerDisplay : MonoBehaviour, IPlayerComponent
         {
             _animator.SetTrigger(_groundedHash);
         }
+    }
+
+    private void OnPunch()
+    {
+        Debug.Log("PlayerDisplay.OnPunch");
+        _animator.SetTrigger(_punchHash);
+    }
+
+    private void OnSpeedRun()
+    {
+        Debug.Log("PlayerDisplay.OnSpeedRun");
+        _animator.SetTrigger(_speedRunHash);
+    }
+
+    private void OnSwordSlash()
+    {
+        Debug.Log("PlayerDisplay.OnSwordSlash");
+        _animator.SetTrigger(_swordSlashHash);
     }
 }
 

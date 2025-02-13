@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 271324887}
   - component: {fileID: 271324886}
   - component: {fileID: 271324885}
+  - component: {fileID: 271324889}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -314,6 +315,7 @@ MonoBehaviour:
   _settings: {fileID: 11400000, guid: d22d4f7820c7d86488aabaeb93628026, type: 2}
   _input: {fileID: 271324887}
   _movement: {fileID: 271324886}
+  _attack: {fileID: 271324889}
   _animator: {fileID: 506129343}
   _displayParent: {fileID: 506129341}
 --- !u!114 &271324886
@@ -332,9 +334,6 @@ MonoBehaviour:
   _input: {fileID: 271324887}
   _rigidbody: {fileID: 271324882}
   _collider: {fileID: 271324884}
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &271324887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +362,20 @@ MonoBehaviour:
   _input: {fileID: 271324887}
   _movement: {fileID: 271324886}
   _display: {fileID: 271324885}
+  _attack: {fileID: 271324889}
+--- !u!114 &271324889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271324880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fee558b22f553045b463fbf2dbef97c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _input: {fileID: 271324887}
 --- !u!1 &329716673
 GameObject:
   m_ObjectHideFlags: 0

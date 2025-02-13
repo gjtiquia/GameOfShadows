@@ -7,6 +7,9 @@ public class PlayerInput : MonoBehaviour, IPlayerComponent
         public bool JumpDown;
         public bool JumpHeld;
         public Vector2 Move;
+        public bool PunchDown;
+        public bool SpeedRunDown;
+        public bool SwordSlashDown;
     }
 
     // PUBLIC MEMBERS
@@ -37,11 +40,18 @@ public class PlayerInput : MonoBehaviour, IPlayerComponent
             move.y = Mathf.Abs(move.y) < _settings.VerticalDeadZoneThreshold ? 0 : Mathf.Sign(move.y);
         }
 
+        var punchDown = Input.GetKeyDown(KeyCode.J);
+        var speedRunDown = Input.GetKeyDown(KeyCode.K);
+        var swordSlashDown = Input.GetKeyDown(KeyCode.L);
+
         _currentInput = new FrameInput
         {
             JumpDown = jumpDown,
             JumpHeld = jumpHeld,
-            Move = move
+            Move = move,
+            PunchDown = punchDown,
+            SpeedRunDown = speedRunDown,
+            SwordSlashDown = swordSlashDown
         };
     }
 }
