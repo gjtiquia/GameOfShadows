@@ -207,7 +207,10 @@ GameObject:
   - component: {fileID: 271324881}
   - component: {fileID: 271324882}
   - component: {fileID: 271324884}
-  - component: {fileID: 271324883}
+  - component: {fileID: 271324888}
+  - component: {fileID: 271324887}
+  - component: {fileID: 271324886}
+  - component: {fileID: 271324885}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -259,19 +262,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &271324883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271324880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b81cf83dc9a7f78478856fe8f19a5ce6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stats: {fileID: 11400000, guid: b5c186841745ad3408eaad9436f2f99b, type: 2}
 --- !u!70 &271324884
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -309,6 +299,70 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 2.47}
   m_Size: {x: 1.54, y: 5.21}
   m_Direction: 0
+--- !u!114 &271324885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271324880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71397f8c147c2a46bee1af0093b54c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settings: {fileID: 11400000, guid: d22d4f7820c7d86488aabaeb93628026, type: 2}
+  _input: {fileID: 271324887}
+  _movement: {fileID: 271324886}
+  _animator: {fileID: 506129343}
+  _displayParent: {fileID: 506129341}
+--- !u!114 &271324886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271324880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93811c27ed31534b9a6d2b40134f6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settings: {fileID: 11400000, guid: b736a6c4664dbe348b69d61ba620cb14, type: 2}
+  _input: {fileID: 271324887}
+  _rigidbody: {fileID: 271324882}
+  _collider: {fileID: 271324884}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &271324887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271324880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33496afb1db16cb40a304ac85aea824b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settings: {fileID: 11400000, guid: 8b5eb2b6f97794040839c898749d8f03, type: 2}
+--- !u!114 &271324888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271324880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f762f40a4125ab24cbead4fbf4f84a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _input: {fileID: 271324887}
+  _movement: {fileID: 271324886}
+  _display: {fileID: 271324885}
 --- !u!1 &329716673
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +568,6 @@ GameObject:
   m_Component:
   - component: {fileID: 506129342}
   - component: {fileID: 506129343}
-  - component: {fileID: 506129344}
   m_Layer: 0
   m_Name: Display
   m_TagString: Untagged
@@ -561,30 +614,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &506129344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506129341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d4b8f888b102fc4e83c1396941d255e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _groundedKey: Grounded
-  _idleSpeedKey: IdleSpeed
-  _jumpKey: Jump
-  _anim: {fileID: 506129343}
-  _displayParent: {fileID: 506129341}
-  _jumpParticles: {fileID: 0}
-  _launchParticles: {fileID: 0}
-  _moveParticles: {fileID: 0}
-  _landParticles: {fileID: 0}
-  _jumpFXPrefab: {fileID: 2844000711581779723, guid: ded06e3fc0e356b49af6f4b1faaa5b2a, type: 3}
-  _jumpFXDuration: 0.5
-  _footsteps: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

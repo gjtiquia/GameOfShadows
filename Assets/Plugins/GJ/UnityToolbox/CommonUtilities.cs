@@ -11,6 +11,11 @@ namespace GJ.UnityToolbox
             return property;
         }
 
+        public static void AssertIsNotNull<T>(MonoBehaviour contextMonoBehaviour, T property) where T : class
+        {
+            AssertIsNotNull(contextMonoBehaviour.gameObject, property);
+        }
+
         public static void AssertIsNotNull<T>(GameObject contextGameObject, T property) where T : class
         {
             WarnIfNull(contextGameObject, property);
