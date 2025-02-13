@@ -4,6 +4,9 @@ using GJ.UnityToolbox;
 
 public class PlayerMovement : MonoBehaviour, IPlayerComponent
 {
+    // PUBLIC MEMBERS
+    public bool IsGrounded => _grounded;
+
     // PUBLIC EVENTS
     public event Action<bool, float> GroundedChanged;
     public event Action Jumped;
@@ -29,7 +32,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
 
     private bool _hasBufferedJump => _bufferedJumpUsable && _time < _timeJumpWasPressed + _settings.JumpBuffer && _timeJumpWasPressed > 0;
     private bool _canUseCoyote => _coyoteUsable && !_grounded && _time < _frameLeftGrounded + _settings.CoyoteTime;
-
 
     // MonoBehaviour INTERFACE
     private void OnValidate()

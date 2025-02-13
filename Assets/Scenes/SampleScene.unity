@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _input: {fileID: 271324887}
+  _movement: {fileID: 271324886}
 --- !u!1 &329716673
 GameObject:
   m_ObjectHideFlags: 0

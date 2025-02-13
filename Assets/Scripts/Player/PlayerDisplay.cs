@@ -101,19 +101,16 @@ public class PlayerDisplay : MonoBehaviour, IPlayerComponent
 
     private void OnPunch()
     {
-        Debug.Log("PlayerDisplay.OnPunch");
         _animator.SetTrigger(_punchHash);
     }
 
     private void OnSpeedRun()
     {
-        Debug.Log("PlayerDisplay.OnSpeedRun");
         _animator.SetTrigger(_speedRunHash);
     }
 
     private void OnSwordSlash()
     {
-        Debug.Log("PlayerDisplay.OnSwordSlash");
         _animator.SetTrigger(_swordSlashHash);
     }
 }
