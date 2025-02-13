@@ -2,8 +2,9 @@
 
 ## TODOs  
 
-- [ ] refactor Player to have `PlayerController` controlling the execution order of `PlayerInput`, `PlayerMovement`, `PlayerAnimator`
-- [ ] implement the other animations to visualize and test and iterate
+- [x] refactor Player to have `PlayerController` controlling the execution order of `PlayerInput`, `PlayerMovement`, `PlayerAnimator`
+- [x] implement the other animations to visualize and test and iterate
+- [ ] during attack cannot (turn, do other attacks, jump)
 - [ ] create first enemy
 - [ ] import OdinInspector
 - [ ] see if OdinInspector works on web
